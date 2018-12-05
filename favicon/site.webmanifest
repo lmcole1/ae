@@ -1,0 +1,19 @@
+{
+    "name": "Q SIS",
+    "short_name": "Q SIS",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png?v=XBze87Kjmz",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-256x256.png?v=XBze87Kjmz",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
