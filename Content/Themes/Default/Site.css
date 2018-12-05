@@ -1,0 +1,148 @@
+/*----------*/
+/* Site CSS */
+/*----------*/
+/* THEMES STYLE SHEET */
+/* DEFINE COLORS ONLY IN THIS STYLE SHEET */
+
+body {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+a:link, a:hover, a:active, a:visited {
+    color: #000000;
+}
+.btn {
+	color: #000000;
+}
+.copyright {
+	color: #666666;
+}
+.error {
+    color:Red;
+}
+.aefieldset
+{
+    background-color: #BDD2BD;
+    border-color: black;
+}
+.hdr
+{
+    background-color: #93B793;
+    color: #ffffff;
+}
+.aelegend {
+	background-color: #d7d0ac;
+	border-color: black;
+}
+.listtbl {
+	border-color: #BDD2BD;
+}
+.listtbl th {
+	background-color: #d7d0ac;
+}
+.listtbl tr.odd td {
+	background-color:#ffffff;
+}
+.listtbl tr.even td {
+	background-color:#ece9d8;
+}
+.listtbl tr:hover td {
+	background-color:#d7d0ac;
+}
+.listtbl tr.selected td {
+    background-color:#bdd2bd;
+}
+.displaytbl {
+	border-color: #354F35;
+}
+.displaytbl th {
+	background-color: #BDD2BD;
+}
+.stdtbl {
+	border-color: #000000;
+}
+.stdtbl th {
+	border-color: #000000;
+	background-color: #D7D0AC;
+}
+.stdtbl td {
+	border-color: #000000;
+}
+.stdtbl tr:hover td {
+	background-color:#d7d0ac;
+}
+.stdtbl tr.selected td {
+    background-color:#bdd2bd;
+}
+.schedtbl {
+	background-color: #ffffff;
+	border-color: #000000;
+}
+.schedtbl .colhdr {
+	border-color: #000000;
+	background-color: #ece9d8;
+}
+.schedtbl th {
+	border-color: #000000;
+	background-color: #D7D0AC;
+}
+.schedtbl td {
+	border-color: #000000;
+}
+.bigmsg {
+    color:Gray;
+}
+.smallmsg {
+    color:Gray;
+}
+.altRowBackground {
+	background-color:#ece9d8;
+}
+.altRow {
+	background-color:#ece9d8;
+}
+tr.over td{
+    background-color: #D7D0AC;
+}
+tr.selected td {
+    background-color: #BDD2BD;
+}
+.selected {
+    background-color: #BDD2BD;
+}
+.txtin {
+	color: #000000;
+	border-color: #999999;
+}
+.txtin2 {
+	color: #000000;
+	border-color: #999999;
+}
+.txtin3 {
+	color: #000000;
+}
+.viewport {
+    border: solid 1px #000000;
+    background-color: #ece9d8;
+}
+.appblank {
+	color: #93b793;
+}
+.banner {
+	background-color:#ece9d8;
+}
+
+.errtbl {
+	background-color: #ece9d8;
+	border-color: #999966;
+}
+#logo {
+	background-image: url(../../../images/logopage.jpg);
+	background-repeat: no-repeat;
+	background-position:center center;
+	height: 250px;
+	width: 250px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
