@@ -39,29 +39,11 @@
 			var rnd = Math.random();
 			var HTML_FILE_URL = 'Startup.txt?id=' + rnd.toString();
 			$(document).ready(function () {
-				$.get(HTML_FILE_URL, function (data) {
-					var myitemlist = data.split(String.fromCharCode(13));
-					for (var i = 0; i < myitemlist.length; i++) {
-						var myitem = myitemlist[i].split(',');
-						if (myitem.length == 2) {
-							if (i > 0) {
-								myitem[0] = myitem[0].substring(1);
-							};
-							var loginfile = "'" + myitem[1] + "'";
-							$("#loginlist li:last").after('<li><a href="javascript:openlogin(' + loginfile + ')" style="font-size:0.9em;">' + myitem[0] + '</a></li>');
-						};
-						$('ul').listview('refresh');
-					};
-				});
-
 				if ('serviceWorker' in navigator) {
 					navigator.serviceWorker.register('qServiceWorker.js');
 				};
 			});
 
-			function openlogin(sconnectid) {
-				document.location.href = "Default.aspx?connectid=" + sconnectid;
-			}
 		</script>
 	</div>
 </body>
