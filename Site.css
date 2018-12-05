@@ -1,0 +1,337 @@
+﻿/*----------*/
+/* Site CSS */
+/*----------*/
+/* DO NOT DEFINE COLORS IN THIS STYLE SHEET. */
+/* COLORS ARE DEFINED IN THEMES */
+
+body {
+    font-size: .85em;
+    font-family: Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+}
+a, a:link, a:hover, a:active, a:visited {
+    text-decoration: underline;
+		cursor: pointer;
+}
+p {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+/*---------------------------------------------------------------------------*/
+/* Input validation classes                                                  */
+/* 01/22/2014 JKM                                                            */
+/* Collected here from Site.css and AppContent.css and from the theme        */
+/* versions of these. Background-colors changed from #ffeeee to #ffdddd.     */
+/* Because of CSS precidence rules, make sure .input-required-field is       */
+/* declared before .input-validation-error.                                  */
+.appValidationError {
+	display:none; 
+	width:100%; 
+	background-color:#ffdddd; 
+	color:#ff0000;
+}
+.validationSummary {
+    padding: 0px;
+    overflow: hidden;
+	background-color:#ffdddd; 
+	color:#ff0000;
+}
+.validationSummary ul {
+    list-style: none;
+}
+.input-required-field {
+    background-color: #ffffdd;
+}
+.input-validation-error {
+    border: 1px solid;
+    border-color: #ff0000;
+    background-color: #ffdddd;
+}
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+.field-validation-error {
+    color: #ff0000;
+}
+.validate-error {
+    background-color: #ffdddd;
+}
+/*---------------------------------------------------------------------------*/
+
+.page {
+    width: 100%;
+    /*margin-left: auto;  Auto Margins cause problems with Absolute positioning in IE8
+    margin-right: auto;*/
+}
+.pagebyline {
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: .8em;
+	font-weight: bold;
+}
+.btn {
+	font-size: 1em;
+}
+.clear {
+    clear: both;
+}
+.copyright {
+	font-size: .7em;
+}
+.error {
+	font-size:.7em;
+	font-weight:bold;
+}
+.aefieldset {
+	border:solid 1px;
+}
+.aehidden {
+	display:none;
+}
+.hdr {
+	font-size: 1em;
+	font-weight: bold;
+}
+.fldlbl {
+	font-size: 1.0em;
+	font-weight: bold;
+	white-space: nowrap;
+}
+.leftTable {
+	float: left;
+	width: 49%;
+}
+.aelegend {
+	font-size: 1em;
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+	border: solid 1px;
+}
+.listtbl {
+	font-size: .9em;
+}
+.listtbl th {
+	font-weight: bold;
+	padding: 2px 2px 2px 2px;
+	text-align: left;
+	vertical-align: top;
+	white-space: nowrap;
+}
+.listtbl td {
+	padding: 2px 2px 2px 2px;
+	cursor: default;
+}
+.displaytbl {
+	border: solid 1px;
+}
+.displaytbl th {
+	font-weight: bold;
+	white-space: nowrap;
+}
+.displaytblopen
+{
+    background-color: #FCFCFC;
+    background-image: url(../Images/gradientReportOptions.jpg);
+    background-position: left;
+    background-repeat: repeat-y;
+}
+.rightDetails {
+	margin-left: 50%;
+	width: 50%;
+}
+.stdtbl {
+	font-size: .9em;
+}
+.stdtbl th {
+	font-weight: bold;
+	white-space: nowrap;
+}
+.stdtbl td {
+	font-weight: normal;
+}
+.brdrtbl {
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: .9em;
+	border: 1px solid Black;
+}
+.brdrtbl th {
+	font-weight: bold;
+	border: 1px solid Black;
+}
+.brdrtbl td {
+	border: 1px solid Black;
+}
+.scheddiv {
+	width: 100%;
+	padding-bottom: 5px;
+}
+.schedimg {
+	cursor: pointer;
+}
+.schedtblhdr {
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: .9em;
+	font-weight: normal;}
+.schedtbl {
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: .9em;
+	font-weight: normal;}
+.schedtbl th {
+	font-weight: bold;
+	padding-left: 2px;
+	padding-right: 2px;}
+.bigmsg {
+	font-size:.9em;
+	font-weight:bold;
+}
+.smallmsg {
+	font-size:.7em;
+	font-weight:bold;
+}
+.smalltxt {
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: .7em;
+	font-weight: normal;
+}
+.tblinset {
+	border: none;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.tblinset td {
+	border: none;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+tr.over td {
+	cursor:hand;
+}
+.txtin {
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 1em;
+	border: solid 1px;
+}
+.txtin2 {
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 1em;
+}
+.txtin3 {
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: .9em;
+}
+.txtin8 {
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: .8em;
+}
+.viewport {
+    width: 80%;
+    height: 200px;
+    overflow: auto;
+    position: relative;
+}
+.appblank {
+	font-size: 2.5em;
+	font-weight: bold;
+	filter: shadow(OffX=3, OffY=3, Color='#cccccc', Positive='true');
+	text-shadow: -3px 3px #cccccc;
+}
+.banner {
+	font-size: 1.1em;
+	font-weight:bold;
+	text-align:center;
+}
+
+.errtbl {
+	border:solid 1px;
+	font-size: .9em;
+}
+.errtbl th
+{
+	font-weight: bold;
+	padding: 0px 2px 0px 2px;
+	vertical-align: top;
+	white-space: nowrap;
+}
+.errtbl td
+{
+	padding: 0px 2px 0px 2px;
+	vertical-align: top;
+}
+.reportparmstbl 
+{
+    border:solid 1px;
+}
+.reportparmstbl th {
+	font-weight: bold;
+	white-space: nowrap;
+}
+.imageDatePicker::-ms-clear {
+    display:none;
+}
+.sidebox {
+	margin: 0 auto;
+	background: url(../images/sbbodyright.gif) no-repeat bottom right;
+	font-size: 100%;
+	width:450px;
+}
+.sidebox2 {
+	margin: 0 auto;
+	background: url(../images/sbbodyright.gif) no-repeat bottom right;
+	font-size: 100%;
+	width:600px;
+}
+.boxhead {
+	background: url(../images/sbheadright.gif) no-repeat top right;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.boxhead h2 {
+	background: url(../images/sbheadleft.gif) no-repeat top left;
+	margin: 0;
+	padding: 22px 30px 5px;
+	color: white;
+	font-weight: bold;
+	font-size: 1.2em;
+	line-height: 1em;
+	text-shadow: rgba(0,0,0,.4) 0px 2px 5px;
+}
+.boxbody {
+	background: url(../images/sbbodyleft.gif) no-repeat bottom left;
+	margin: 0;
+	padding: 5px 30px 31px;
+	font-size: 1em;
+}
+.pending {
+    color: #000000;
+}
+/*Added for version 4.1.0*/
+.datepick-trigger {
+    margin-top : 1px;
+    margin-left: 2px;
+    vertical-align : top;
+    cursor: pointer;
+}
+/* To get disabled controls of various types to look the same across different browsers. */
+input:not([type="button"]):disabled {
+	background-color: rgb(240,240,240);
+	color: rgb(1,1,1);
+}
+select:disabled {
+	background-color: rgb(240,240,240);
+	color: rgb(1,1,1);
+}
+select:disabled::-ms-value {  /* Specific to I.E. to undo the greyed out text */
+	color: rgb(1,1,1);
+}
+textarea:disabled {
+	background-color: rgb(240,240,240);
+	color: rgb(1,1,1);
+}
+.corners {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
