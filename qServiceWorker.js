@@ -9,8 +9,7 @@ self.addEventListener('install', function (e) {
 });
 
 self.addEventListener('fetch', function (e) {
-	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin')
-		e.respondWith(caches.match(e.request).then(function (r) { return r || fetch(e.request); }));
+	e.respondWith(caches.match(e.request).then(function (r) { return r || fetch(e.request); }));
 });
 
 self.addEventListener('activate', function (e) {
