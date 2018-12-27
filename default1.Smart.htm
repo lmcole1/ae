@@ -46,5 +46,42 @@
 
 		</script>
 	</div>
+	<div>
+		<input type="button" class="ad2hs-prompt" value="Add To Homescreen" style="display:none"/>
+	</div>
 </body>
 </html>
+<script type="text/javascript">
+	var deferredPrompt;
+
+	window.addEventListener('beforeinstallprompt', function (event) {
+		console.log('beforeinstallprompt event');
+		event.preventDefault();																						// Prevent Chrome 67 and earlier from automatically showing the prompt
+		deferredPrompt = event;																						// Stash the event so it can be triggered later.
+		showAddToHomeScreen();
+	});
+
+	function showAddToHomeScreen() {
+		var a2hsBtn = document.querySelector(".ad2hs-prompt");
+		a2hsBtn.style.display = "block";
+		a2hsBtn.addEventListener("click", addToHomeScreen);
+	}
+	
+	function addToHomeScreen() {
+		var a2hsBtn = document.querySelector(".ad2hs-prompt");					// hide our user interface that shows our A2HS button
+		a2hsBtn.style.display = 'none';																	// Show the prompt
+		deferredPrompt.prompt();																				// Wait for the user to respond to the prompt
+		deferredPrompt.userChoice
+			.then(function (choiceResult) {
+
+				if (choiceResult.outcome === 'accepted') {
+					console.log('User accepted the A2HS prompt');
+				}
+				else {
+					console.log('User dismissed the A2HS prompt');
+				}
+
+				deferredPrompt = null;
+			});
+	}
+</script>
