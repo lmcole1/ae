@@ -35,7 +35,7 @@
 			</ul>
 		</div>
 		<div>
-			<input type="button" id="btn_ad2hs" value="Add To Homescreen" style="display:none" onchange="addToHomeScreen();"/>
+			<input type="button" id="btn_ad2hs" value="Add To Homescreen" style="display:none;" onchange="addToHomeScreen();"/>
 		</div>
 		<script type="text/javascript">
 			//attach random number to stop Startup.txt from being cached
@@ -55,7 +55,10 @@
 				showAddToHomeScreen();
 			});
 
-			function showAddToHomeScreen() { $('#btn_ad2hs').show(); }
+			function showAddToHomeScreen() { 
+				console.log('in showAddToHomeScreen');
+				$('#btn_ad2hs').show(); 
+			}
 
 			function addToHomeScreen() {
 				console.log('addToHomeScreen function');
