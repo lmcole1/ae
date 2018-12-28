@@ -21,5 +21,5 @@
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "pwa/default1.Smart.htm"
+  "start_url": "../default1.Smart.htm"
 }
