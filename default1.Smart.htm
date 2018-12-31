@@ -41,11 +41,57 @@
 			//attach random number to stop Startup.txt from being cached
 			var rnd = Math.random();
 			var HTML_FILE_URL = 'Startup.txt?id=' + rnd.toString();
+			var swRegistration;
 			$(document).ready(function () {
 				if ('serviceWorker' in navigator) {
-					navigator.serviceWorker.register('qServiceWorker.js');
-				};
+					navigator.serviceWorker.register('qServiceWorker.js')
+					.then(function (swReg) {
+						alert('Service Worker is registered', swReg);
+						if ('PushManager' in window) {
+							swRegistration = swReg;
+							checkPushSubscription();
+						}
+						else alert('Push messaging is not supported');
+					})
+					.catch(function (error) { console.error('Service Worker Error', error); });
+				}
 			});
+			
+			function checkPushSubscription() {															// Set the initial subscription value
+				swRegistration.pushManager.getSubscription()
+					.then(function (subscription) {
+						isSubscribed = !(subscription === null);
+
+						if (isSubscribed) {
+							alert('User IS subscribed.');
+							alert(JSON.stringify(subscription));
+						}
+						else {
+							console.log('User is NOT subscribed.');
+							subscribeToPushNotif();
+						}
+					});
+			}
+
+			function subscribeToPushNotif() {
+				swRegistration.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlB64ToUint8Array(PushPublicKey) })
+				.then(function (subscription) {
+					alert('User is subscribed.');
+					alert(JSON.stringify(subscription));
+/*
+					$.post('', { subscrip: JSON.stringify(subscription) }, function (retval) {
+						if (retval.errmsg != '') {
+							console.log(retval.errmsg);
+						}
+					});
+*/
+					isSubscribed = true;
+				})
+				.catch(function (err) {
+					console.log('Failed to subscribe the user: ', err);
+					isSubscribed = false;
+				});
+			}
 			
 			var deferredPrompt;
 
@@ -71,6 +117,21 @@
 						}
 						deferredPrompt = null;
 					});
+			}
+			
+			function urlB64ToUint8Array(base64String) {
+				const padding = '='.repeat((4 - base64String.length % 4) % 4);
+				const base64 = (base64String + padding)
+					.replace(/\-/g, '+')
+					.replace(/_/g, '/');
+
+				const rawData = window.atob(base64);
+				const outputArray = new Uint8Array(rawData.length);
+
+				for (let i = 0; i < rawData.length; ++i) {
+					outputArray[i] = rawData.charCodeAt(i);
+				}
+				return outputArray;
 			}
 		</script>
 	</div>
