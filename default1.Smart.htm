@@ -44,6 +44,7 @@
 			
 			$(document).ready(function () {
 				$('#pid').text(rnd);
+				/*
 				if ('serviceWorker' in navigator) {
 					navigator.serviceWorker.register('qServiceWorker.js')
 					.then(function (swReg) {
@@ -56,6 +57,7 @@
 					})
 					.catch(function (error) { console.error('Service Worker Error', error); });
 				}
+				*/
 			});
 			
 			function checkPushSubscription() {															// Set the initial subscription value
