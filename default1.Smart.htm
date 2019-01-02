@@ -43,6 +43,7 @@
 			var HTML_FILE_URL = 'Startup.txt?id=' + rnd.toString();
 			var swRegistration;
 			$(document).ready(function () {
+				alert(rnd);
 				if ('serviceWorker' in navigator) {
 					navigator.serviceWorker.register('qServiceWorker.js')
 					.then(function (swReg) {
