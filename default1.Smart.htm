@@ -77,14 +77,13 @@
 				swRegistration.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlB64ToUint8Array(PushPublicKey) })
 				.then(function (subscription) {
 					alert('User is subscribed.');
-					alert(JSON.stringify(subscription));
-/*
-					$.post('', { subscrip: JSON.stringify(subscription) }, function (retval) {
-						if (retval.errmsg != '') {
-							console.log(retval.errmsg);
-						}
+
+					$.post('https://pushutil.azurewebsites.net/Home/AddUpdateEndpoint', 
+					       { atype:'C', auniq: '11', EndPointjson: JSON.stringify(subscription) }, function (retval) {
+						if (retval.errmsg != '') alert(retval.errmsg);
+						else alert('written')'
 					});
-*/
+
 					isSubscribed = true;
 				})
 				.catch(function (err) {
