@@ -80,7 +80,7 @@
 					$.post('https://pushutil.azurewebsites.net/Home/AddUpdateEndpoint', 
 					       { atype:'C', auniq: '11', EndPointjson: JSON.stringify(subscription) }, function (retval) {
 						if (retval.errmsg != '') alert(retval.errmsg);
-						else alert('written')'
+						else alert('written');
 					});
 
 					isSubscribed = true;
