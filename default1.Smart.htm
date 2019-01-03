@@ -49,7 +49,7 @@
 			const PushPrivateKey = '5PGlvy2T_7pka4wu4vEvsrb1GFVoGf2QEHMeYwB45sM';
 			
 			$(document).ready(function () {
-				$('#pid').text('v2');
+				$('#pid').text('v5');
 				$('#btn_ad2hs').hide();
 				if ('serviceWorker' in navigator) {
 					navigator.serviceWorker.register('qServiceWorker.js')
@@ -73,6 +73,11 @@
 						if (isSubscribed) {
 							alert('User IS subscribed.');
 							alert(JSON.stringify(subscription));
+							
+							$.post('https://pushutil.azurewebsites.net/Home/AddUpdateEndpoint', 
+							  { atype:'C', auniq: '11', EndPointjson: JSON.stringify(subscription) }, function (retval) {
+								if (retval.errmsg != '') $('#pid').text(retval.errmsg);
+					});
 						}
 						else {
 							$('#pid').text('User is NOT subscribed.');
