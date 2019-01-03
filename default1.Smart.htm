@@ -45,10 +45,12 @@
 			var rnd = Math.random();
 			var HTML_FILE_URL = 'Startup.txt?id=' + rnd.toString();
 			var swRegistration;
-			const PushPublicKey = 'BOoDXqocH0KFiyDqp0KEWHPnKjzJ23HAx1ydj23Zbh3JkREMtwD3yIf20kqH8RifycE3ddWZhPdCpCHMyUUV-2Q';
+			const PushPublicKey = 'BGuyNanMLF2SsgvO56oorAa0tw-up0RwIwzktEWsDDteh-FJ3JxXl8PQ16Ujp23y0K-zPm4s88KaiD83PCWJoy4';
+			const PushPrivateKey = '5PGlvy2T_7pka4wu4vEvsrb1GFVoGf2QEHMeYwB45sM';
 			
 			$(document).ready(function () {
-				$('#pid').text(rnd);
+				$('#pid').text('v1');
+				$('#btn_ad2hs').hide();
 				if ('serviceWorker' in navigator) {
 					navigator.serviceWorker.register('qServiceWorker.js')
 					.then(function (swReg) {
