@@ -1,6 +1,5 @@
-var cacheName = 'js13kPWA-v2';
+var cacheName = 'js13kPWA-v3';
 var appShellFiles = [
-  'default1.Smart.htm',
   'favicon/qwebmanifest.json'
 ];
 
