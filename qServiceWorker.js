@@ -1,4 +1,4 @@
-var cacheName = 'js13kPWA-v5';
+var cacheName = 'js13kPWA-v6';
 var appShellFiles = [
   'favicon/qwebmanifest.json'
 ];
@@ -33,7 +33,7 @@ self.addEventListener('push', function(event) {
 	const title = 'Q';
 	const options = {
 		body: event.data.text(),
-		icon: '/images/info.png'
+		icon: '/images/QMobile.jpg'
 	};
 
 	const notificationPromise = self.registration.showNotification(title, options);
