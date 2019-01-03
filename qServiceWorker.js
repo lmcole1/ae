@@ -30,7 +30,7 @@ self.addEventListener('activate', function (e) {
 //});
 
 self.addEventListener('push', function(event) {
-	const title = 'Q';
+	const title = 'Q Parent Portal';
 	const options = {
 		body: event.data.text(),
 		icon: '/images/QMobile.jpg'
