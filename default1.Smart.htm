@@ -33,6 +33,11 @@
 			<p id="pid">Not set</p>
 		</div>
 		<div>
+			<ul id="loginlist" data-role="listview" data-inset="true" style="margin-left:5px; margin-right:5px;">
+				<li data-role="list-divider">Select the Database to Log Into</li>
+			</ul>
+		</div>
+		<div>
 			<input type="button" id="btn_ad2hs" value="Add To Homescreen" style="display:none;" onclick="addToHomeScreen();"/>
 		</div>
 		<script type="text/javascript">
@@ -68,7 +73,7 @@
 							alert(JSON.stringify(subscription));
 						}
 						else {
-							console.log('User is NOT subscribed.');
+							$('#pid').text('User is NOT subscribed.');
 							subscribeToPushNotif();
 						}
 					});
@@ -77,18 +82,17 @@
 			function subscribeToPushNotif() {
 				swRegistration.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlB64ToUint8Array(PushPublicKey) })
 				.then(function (subscription) {
-					alert('User is subscribed.');
+					$('#pid').text('Subscription Successful.');
 
 					$.post('https://pushutil.azurewebsites.net/Home/AddUpdateEndpoint', 
 					       { atype:'C', auniq: '11', EndPointjson: JSON.stringify(subscription) }, function (retval) {
-						if (retval.errmsg != '') alert(retval.errmsg);
-						else alert('written');
+						if (retval.errmsg != '') $('#pid').text(retval.errmsg);
 					});
 
 					isSubscribed = true;
 				})
 				.catch(function (err) {
-					console.log('Failed to subscribe the user: ', err);
+					$('#pid').text('Failed to subscribe the user: ', err);
 					isSubscribed = false;
 				});
 			}
