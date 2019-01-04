@@ -1,4 +1,4 @@
-var cacheName = 'js13kPWA-v8';
+var cacheName = 'js13kPWA-v9';
 var appShellFiles = [
   'favicon/qwebmanifest.json'
 ];
@@ -30,7 +30,8 @@ self.addEventListener('activate', function (e) {
 //});
 
 self.addEventListener('push', function(event) {
-	const title = event.data.title() || 'Q Parent Portal';
+	var data = event.data.json();
+	const title = data.title() || 'Q Parent Portal';
 	const options = {
 		body: event.data.text(),
 		icon: 'favicon/android-chrome-512x512.png'
