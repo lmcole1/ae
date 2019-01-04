@@ -33,7 +33,7 @@ self.addEventListener('push', function(event) {
 	const title = event.data.title() || 'Q Parent Portal';
 	const options = {
 		body: event.data.text(),
-		icon: './images/QMobile.jpg'
+		icon: 'favicons/android-chrome-512x512.png'
 	};
 
 	const notificationPromise = self.registration.showNotification(title, options);
