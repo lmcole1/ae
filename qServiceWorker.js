@@ -1,4 +1,4 @@
-var cacheName = 'js13kPWA-v6';
+var cacheName = 'js13kPWA-v7';
 var appShellFiles = [
   'favicon/qwebmanifest.json'
 ];
@@ -32,8 +32,8 @@ self.addEventListener('activate', function (e) {
 self.addEventListener('push', function(event) {
 	const title = 'Q Parent Portal';
 	const options = {
-		body: event.data.text(),
-		icon: '/images/QMobile.jpg'
+		body: JSON.stringify(event.data), //event.data.text(),
+		icon: 'images/QMobile.jpg'
 	};
 
 	const notificationPromise = self.registration.showNotification(title, options);
