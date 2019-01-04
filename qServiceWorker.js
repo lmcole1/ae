@@ -1,4 +1,4 @@
-var cacheName = 'js13kPWA-v9';
+var cacheName = 'js13kPWA-v10';
 var appShellFiles = [
   'favicon/qwebmanifest.json'
 ];
