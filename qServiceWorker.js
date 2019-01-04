@@ -30,10 +30,10 @@ self.addEventListener('activate', function (e) {
 //});
 
 self.addEventListener('push', function(event) {
-	const title = 'Q Parent Portal';
+	const title = event.data.title() || 'Q Parent Portal';
 	const options = {
-		body: JSON.stringify(event.data), //event.data.text(),
-		icon: 'images/QMobile.jpg'
+		body: event.data.text(),
+		icon: './images/QMobile.jpg'
 	};
 
 	const notificationPromise = self.registration.showNotification(title, options);
