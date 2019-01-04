@@ -31,7 +31,7 @@ self.addEventListener('activate', function (e) {
 
 self.addEventListener('push', function(event) {
 	var data = event.data.json();
-	const title = data.title() || 'Q Parent Portal';
+	const title = data.title(); // || 'Q Parent Portal';
 	const options = {
 		body: event.data.text(),
 		icon: 'favicon/android-chrome-512x512.png'
